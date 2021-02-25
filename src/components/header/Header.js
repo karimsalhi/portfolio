@@ -6,7 +6,6 @@ import StyleContext from "../../contexts/StyleContext";
 import {
   greeting,
   skillsSection,
-  achievementSection,
   educationInfo,
   bigProjects
 } from "../../portfolio";
@@ -16,7 +15,6 @@ function Header() {
   const viewBigProjects = bigProjects.display;
   const viewEducation = educationInfo.display;
   const viewSkills = skillsSection.display;
-  const viewAchievement = achievementSection.display;
 
 
   return (
@@ -55,7 +53,7 @@ function Header() {
             <a href="#contact">Contact Me</a>
           </li>
           <li>
-            <a href="#">
+            <a href="/">
               <ToggleSwitch />
             </a>
           </li>
