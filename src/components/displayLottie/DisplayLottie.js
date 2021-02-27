@@ -3,6 +3,10 @@ import Lottie from "react-lottie";
 import Loading from "../../containers/loading/Loading";
 
 export default class DisplayLottie extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {isPaused: false};
+  }
   render() {
     const animationData = this.props.animationData;
     const defaultOptions = {
@@ -14,8 +18,8 @@ export default class DisplayLottie extends Component {
     return (
       <Suspense fallback={<Loading />}>
         {/* To override default onClick pause by Lottie */}
-        <div onClick="null">
-          <Lottie options={defaultOptions} />
+        <div onClick={() => this.setState({isPaused: !this.state.isPaused})}>
+          <Lottie options={defaultOptions} isPaused={this.state.isPaused}/>
         </div>
       </Suspense>
     );
